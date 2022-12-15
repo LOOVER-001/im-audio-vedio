@@ -1,0 +1,44 @@
+
+.login {
+  border: 1rpx solid gray;
+  text-align: center;
+  width: 200rpx;
+  height: 38rpx;
+  color: gray;
+}
+.login-btn {
+  width: 200rpx;
+  height: 38rpx;
+  line-height: 38rpx;
+  font-size: 38rpx;
+  text-align: center;
+  background: #2B9939;
+  color: #fff;
+  padding: 0;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.logo {
+  height: 200rpx;
+  width: 200rpx;
+  margin-top: 200rpx;
+  margin-left: auto;
+  margin-right: auto;
+}
+.text-area {
+  display: flex;
+  justify-content: center;
+  margin-top: 50rpx;
+}
+.title {
+  font-size: 36rpx;
+  color: #8f8f94;
+}
+.MB50 {
+  margin-bottom: 50rpx;
+}
+

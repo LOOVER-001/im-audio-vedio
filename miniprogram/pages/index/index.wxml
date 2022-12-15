@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view>
+  <TUI-CallKit config="{{config}}" id="TUIKit"></TUI-CallKit>
+</view>

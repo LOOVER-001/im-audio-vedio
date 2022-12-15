@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "TUI-CallKit": "../../TUICallKit/index"
+  },
+    "navigationStyle": "custom"
+}

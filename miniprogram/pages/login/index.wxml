@@ -1,0 +1,5 @@
+<view class="content"  bind:touchstart = "{{login}}">
+  <image class="logo MB50" src="../../images/logo.png"></image>
+  <text class="title MB50">{{title}}</text>
+  <input bindinput="bindKeyInput" bindblur="login" auto-focus class="login MB50" type="text" placeholder="输入用户登陆" value="{{form.userId}}"/>
+</view>
