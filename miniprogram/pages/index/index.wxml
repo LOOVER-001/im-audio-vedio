@@ -1,4 +1,4 @@
 <!--index.wxml-->
 <view>
-  <TUI-CallKit config="{{config}}" id="TUIKit"></TUI-CallKit>
+  <TUI-CallKit config="{{config}}" id="TUIKit" bindlogoutEvent="logoutEvent"></TUI-CallKit>
 </view>

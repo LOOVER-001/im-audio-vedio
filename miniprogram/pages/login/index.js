@@ -16,7 +16,7 @@ Page({
   },
   login(event) {
     console.log("登陆：", event.detail.value)
-    wx.navigateTo({
+    wx.redirectTo({
       url: `/pages/index/index?userId=${event.detail.value}`
     })
   },

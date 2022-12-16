@@ -86,6 +86,13 @@ Component({
         });
       }
     },
+    // 退出账号
+    logout() {
+      console.log("切换账号事件触发")
+      var myEventDetail = {} // detail对象，提供给事件监听函数
+      var myEventOption = { bubbles:true, composed:true } // 触发事件的选项
+      this.triggerEvent('logoutEvent', myEventDetail, myEventOption)
+    },
     // 更新会话列表
     onConversationListUpdated(event) {
       this.setData({

@@ -5,12 +5,12 @@ import TIMUploadPlugin from '../../TUICallKit/lib/tim-upload-plugin';
     data: {
         config: {
             userID: 'zero', //User ID
-            SDKAPPID: '', // Your SDKAppID
-            SECRETKEY: '', // Your secretKey
+            SDKAPPID: 0 , // Your SDKAppID
+            SECRETKEY: 'xxx', // Your secretKey
             EXPIRETIME: 604800,
         }
     },
-     onLoad(option) {
+    onLoad(option) {
         let defConfig = Object.assign({}, this.data.config)
         defConfig.userID = option.userId
         this.setData({
@@ -35,14 +35,33 @@ import TIMUploadPlugin from '../../TUICallKit/lib/tim-upload-plugin';
         });
         wx.$TUIKit.on(wx.$TUIKitTIM.EVENT.SDK_READY, this.onSDKReady,this);
     },
+    logout(callback) {
+        let promise = wx.$TUIKit.logout();
+        promise.then(function(imResponse){
+            console.log('logout success');
+            callback();
+        }).catch(function(error) {
+            console.warn('登出失败：', error);
+        })
+    },
     onUnload() {
         wx.$TUIKit.off(wx.$TUIKitTIM.EVENT.SDK_READY, this.onSDKReady,this);
-        wx.$TUIKit.logOut({
-          userID: this.data.config.userID
-      });
+    },
+    logoutEvent(e) {
+        this.logout(()=>{
+            wx.redirectTo({
+                url: `/pages/login/index`,
+                success: () => {
+                    wx.$TUIKit.off(wx.$TUIKitTIM.EVENT.SDK_READY, this.onSDKReady,this);
+                },
+                fail: (error) => {
+                    console.warn("登出失败：", error)
+                }
+            })
+        })
     },
     onSDKReady() {
         const TUIKit = this.selectComponent('#TUIKit');
         TUIKit.init();
-    }
+    } 
 });
